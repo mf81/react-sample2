@@ -9,10 +9,14 @@ class FakeDate extends Component {
   };
 
   render() {
+    const { length: count } = this.state.movies;
+    if (count === 0) return <p>No movies in data base.</p>;
+
     return (
       <React.Fragment>
         <div className="container">
           <h2>Fake Data Base</h2>
+          <p>Number of movies in data base is: {count}</p>
           <table className="table">
             <thead>
               <tr>
